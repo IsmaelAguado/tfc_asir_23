@@ -1,0 +1,1166 @@
+/* FUENTES */
+
+@font-face {
+    font-family: ubuntu_regular;
+    src: url("fonts/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+    font-family: ubuntu_bold;
+    src: url("fonts/Ubuntu-Bold.ttf");
+}
+
+@font-face {
+    font-family: daniel;
+    src: url("fonts/Daniel-Regular.otf");
+}
+
+@font-face {
+    font-family: baloo;
+    src: url("fonts/Baloo-Regular.ttf");
+}
+
+@font-face {
+    font-family: kg-1;
+    src: url(./fonts/KGSecondChancesSketch.ttf);
+}
+
+@font-face {
+    font-family: kg-2;
+    src: url(./fonts/KGSecondChancesSolid.ttf);
+}
+
+@font-face {
+    font-family: kg-3;
+    src: url(./fonts/KGSummerSunshine.ttf);
+}
+
+@font-face {
+    font-family: kg-4;
+    src: url(./fonts/KGSummerSunshineBlackout.ttf);
+}
+
+@font-face {
+    font-family: kg-5;
+    src: url(./fonts/KGSummerSunshineShadow.ttf);
+}
+
+
+/* TODA LA WEB */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'ubuntu_regular';
+    text-decoration: none;
+}
+
+/* HEADER */
+
+header {
+    background-color: #030030;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* LOGO */
+
+.cabecera {
+    width: 100%;
+    height: 250px;
+
+}
+
+.div-logo {
+
+    width: 100%;
+    height: 250px;
+
+}
+
+.logo {
+    margin: 0px;
+    width: 100%;
+    height: 250px;
+}
+
+/* INPUT */
+
+
+input{
+    width: 250px;
+    text-align: center;
+}
+
+select{
+    width: 250px;
+    text-align: center;
+}
+
+
+
+/* BARRA MENU */
+
+
+
+.container__menu {
+    width: 100%;
+    height: 50px;
+    background-color: #312782;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    padding: 0px 20px;
+    /* El primer valor es arriba y abajo, el segundo valor es izquierda y derecha. Ponemos ese valor para que haya un espacio y no toque */
+
+}
+
+.menu {
+
+    max-width: 1200px;
+    /* Este es el tamaño con el que estamos trabajando */
+    margin: auto;
+    /* Esto es para que se nos centre */
+    height: 100%;
+    /* Esto es para que pueda estar en el centro, pues si no lo ponemos no va a detectar el medio horizontal */
+}
+
+nav {
+    height: 100%;
+    /* Para que detecte el medio horizontal */
+}
+
+nav>ul {
+    /* Con este selector se está especificando que el estilo vaya al ul que está en el nav */
+    height: 100%;
+    display: block;
+    /* Para poner los li uno al lado del otro */
+}
+
+nav>ul>li {
+    /* Aquí estamos seleccionando los li que estén dentro de ul que estén a su vez dentro de nav */
+    height: 100%;
+    list-style: none;
+    /* Esto es para eliminar los puntos de la lista */
+    position: relative;
+    /* Esto es para que el submenú se relacione con su padre (el apartado del menú del que sale) */
+    margin-right: 5px;
+    font-family: daniel;
+    /* font-weight: bold; */
+}
+
+nav>ul>li>a {
+    font-family: daniel;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* Esto, junto al flex, hace que se posicionen las opciones en el centro horizontal */
+    padding: 10px;
+    /* Esto es para que estén separados los apartados unos de otros */
+    color: #FFEC00;
+    /* text-transform: uppercase; */
+    font-size: 26px;
+    transition: all 300ms ease;
+    /* Esto es para el efecto de transición del hover */
+
+}
+
+nav>ul>li>a:hover {
+    /* Esto es para cuando el a dentro de li, dentro de ul y dentro de nav es sobrepasado por el ratón */
+    transform: scale(1.1);
+    background-color: #FFEC00;
+    color: #009EE2;
+   /*  font-weight: bold; */
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+#selected {
+    /* Esto es para aplicarle un estilo concreto a la sección que corresponda a la página en la que se está */
+    transform: scale(1.1);
+    background-color: #FFEC00;
+    color: #009EE2;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    font-family: daniel;
+}
+
+nav>ul>li>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* Esto, junto al flex, hace que se posicionen las opciones en el centro horizontal */
+    padding: 14px;
+    /* Esto es para que estén separados los apartados unos de otros */
+    color: #FFEC00;
+    font-size: 26px;
+    font-family: daniel;
+
+}
+
+.opcion_derecha {
+    float: right;
+}
+
+.opcion_inicio {
+    float: left;
+}
+
+
+/* SUBMENU */
+
+
+
+nav ul li ul {
+    font-family: daniel;
+    /* Esto es el contenedor del submenu */
+    width: 200px;
+    /* Esto es un ancho fijo */
+    display: flex;
+    flex-direction: column;
+    /* Esto es básicamente para que, con el display flex, se ordenen uno debajo de otro. No es necesario, pero es para asegurarse */
+    background-color: #FFEC00;
+    position: absolute;
+    /* Esto es para que el submenu salga del dom, y así no afecte al ancho derecho de la sección "Géneros" */
+    top: 90px;
+    /* es para separar un poco, y que al pasar el cursor suba y se pegue */
+    left: -5px;
+    /* Es para mantenerse en la misma línea */
+    padding: 10px 0px;
+    visibility: hidden;
+    /* Esto es básicamente para que esté oculto */
+    opacity: 0;
+    /* Esto es para que se no tenga opacidad al estar oculto, lo que nos permitirá teber una animación */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+    /* Para que se mantenga por encima de todo */
+    transition: all 150ms ease;
+    border-radius: 1em;
+}
+
+nav>ul>li>ul>li {
+    list-style: none;
+}
+
+nav ul li:hover ul {
+    /* Esto es para cuando se haga hover. El hover debe estar en el li, pues hacemos hover sobre la categoría para que salga el submenu, no sobre el submenu */
+    visibility: visible;
+    opacity: 1;
+    top: 70px;
+}
+
+nav ul li ul:before {
+    /* La pseudoclase before sirve para crear un elemento que se adapte a él */
+    /*     content: '';/* Lo llenamos con un elemento en blanco */
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    /* Ponemos los dos bordes transparentes para que haya un recorte */
+    border-bottom: 12px solid #FFEC00;
+    position: absolute;
+    /* Con esto y con el top y left hacemos que aparezca el triángulo en la parte superior */
+    top: -12px;
+    left: 20px;
+}
+
+/* SUBMENU */
+
+nav ul li ul li a {
+    display: block;
+    /* Para que en vez de en un texto normal, se convierta en un bloque */
+    color: #312782;
+    padding: 9px;
+    /* Para que se separe del borde */
+    padding-left: 14px;
+    /* Para que se desplace un poco a la derecha y quede un margen */
+    margin-top: 10px;
+    /* Esto es para que los elementos estén separados entre sí */
+    font-size: 26px;
+    font-weight: bold;
+    font-family: daniel;
+    transition: all 300ms ease;
+    background-color: #FFEC00;
+
+}
+
+nav ul li ul li a:hover {
+    background: #312782;
+    /* Esto será el fondo de la subopción cuando hagamos hover */
+    color: #FFEC00;
+    transform: scale(1.1);
+    padding-left: 30px;
+    /* Esto es para que la barra comience a la izquierda, de tal manera que esté centrada */
+    font-weight: bold;
+    font-family: daniel;
+    font-size: 26px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+}
+
+
+/* MAIN */
+
+main{
+    width: 100%;
+    min-height: 1000px;
+}
+
+
+.main-add {
+    width: 100%;
+    min-height: 1000px;
+}
+
+.main-add-1 {
+    width: 100%;
+    min-height: 900px;
+}
+.main-2 {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    width: 80%;    
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+
+}
+.main-3 {
+    
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    width: 80%;        
+}
+
+
+
+
+.main-4 {
+    
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    width: 80%;    
+}
+.main-5 {
+    float: left;   
+    width: 25em;
+    height: 23em; 
+    border-radius:30px;
+    margin-left: 5%;
+    margin-right: 0;    
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    
+
+  
+}
+
+/* PRUEBA INICIO */
+/* .main-5 {
+    float: left;
+    border:solid 5px #ffec00;
+    width: 500px;
+    height: 450px; 
+    border-radius:30px;
+    margin-left: 5%;
+    margin-right: 0;
+    background-color: #312782;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+} */
+
+.main-6 {
+    float: left;    
+    width: 60em;
+    height: 450px; 
+    border-radius:30px;
+    margin-left: 5%;
+    margin-right: 0;   
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: #009ee24c;
+}
+
+.main-61 {
+    float: left;
+    background-color:  #32278250;
+    width: 60em;
+    height: 450px; 
+    border-radius:30px;
+    margin-left: 5%;
+    margin-right: 0;   
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.main-7 {
+   background-color: #009ee24c;
+    margin-left: 14%;
+    margin-right: 10%;
+    margin-top: 2%;
+    width: 75%;  
+    float: left;    
+    height: 250px; 
+    border-radius:30px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.main-8 {
+   background-color: #009ee24c;
+    margin-left: 14%;
+    margin-right: 10%;
+    margin-top: 2%;
+    width: 75%;  
+    float: left;    
+    height: 200px; 
+    border-radius:30px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+.main-71 {
+    background-color: #32278250;
+    margin-left: 14%;
+    margin-right: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 75%;  
+    float: left;    
+    height: 250px; 
+    border-radius:30px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.ini-vid{
+    width: 100%;  
+    margin-top: 20px;  
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+   
+}
+
+.ini-text{
+    padding-top: 25px;
+    color:white;
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 1.6em;
+    text-align: center;
+   
+}
+.ini-text-0{
+    padding-top: 25px;
+    color:#030030;
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+   
+}
+
+.ini-text-2{
+    padding: 25px;
+    color:white;
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: justify;
+    margin-left: 20px;
+}
+.ini-text-21{
+    padding: 25px;
+    padding-top: 40px;
+    color:#030030;
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: justify;
+    margin-left: 20px;
+}
+.ini-text-3{
+    padding: 5%;
+    color:white;
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: justify;
+    margin-left: 20px;
+}
+.ini-text-4{
+    padding: 2%;
+    color:white;
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: justify;
+    margin-left: 20px;
+}
+
+
+
+/* AREA USUARIO */
+
+.ini{
+    font-family: kg-1;
+    font-size: 80px;
+    color:#ffec00;    
+    text-align: center;
+    border-radius: 50px;
+    text-shadow: 4px 4px 10px  rgba(0, 0, 0, 0.5);
+
+}
+
+.ini-0{
+    font-family: kg-1;
+    font-size: 70px;
+    color:#ffec00;    
+    text-align: center;
+    border-radius: 50px;
+    text-shadow: 4px 4px 10px  rgba(0, 0, 0, 0.5);
+   
+    
+}
+
+.ini-1{
+    margin-top: 50px;
+    font-family: baloo;
+    font-size: 26px;
+    text-align: justify;
+    padding: 4%;
+    color: #030030;
+    background-image: url(./img/tela.jpg);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+
+}
+
+/* DISEÑO DE LAS CARACTERISTICAS PIRVACIDAD LEGAL */
+
+
+.tit_priva {
+    font-family: kg-1;
+    font-size: 45px;
+    color: #312782;
+    margin: 2%;
+
+}
+
+.text_priva {
+    font-family: baloo;
+    font-size: 26px;
+    color: #030030;
+    margin-left: 4%;
+    margin-right: 4%;
+    padding-bottom: 2%;
+    text-align: justify;
+}
+
+
+/* FOOTER */
+
+.footer {
+    position: relative;
+    bottom: 0;
+    background-color: #030030;
+    width: 100%;
+    min-height: 400px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.dire {
+    color: white;
+    font-family: ubuntu_bold;
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 90px;
+    padding-bottom: 25px;
+    line-height: 25px;
+}
+
+.dire-2 {
+
+    font-weight: bold;
+    letter-spacing: 5px;
+
+}
+
+.dire-3 {
+    color: #FFEC00;
+    font-weight: bold;
+    font-size: 65px;
+    font-family: daniel;
+}
+
+.dire-4 {
+    color: #312782;
+    font-weight: bold;
+    font-size: 65px;
+    font-family: daniel;
+}
+
+.dire-5 {
+    color: #e5007e;
+    font-weight: bold;
+    font-size: 65px;
+    font-family: daniel;
+
+}
+
+.dire-6 {
+    color: #009EE2;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: daniel;
+    letter-spacing: 10px;
+}
+
+.div-logo-2 {
+    border: 2px solid white;
+    width: 100%;
+}
+
+.logo-2 {
+    margin: 25px;
+    width: 200px;
+    margin-left: 45%;
+    margin-right: 45%;
+
+}
+
+/* REDES SOCIALES */
+
+.red {
+    margin-top: 0px;
+    width: 100%;
+    height: 100px;
+    padding-left: 37%;
+}
+
+
+.red-1 {
+    margin-left: 5%;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.red-2 {
+    width: 100px;
+    height: 100px;
+
+}
+
+.red-2:hover {
+    background-color: #009EE2;
+    border-radius: 15px;
+}
+
+
+.priva {
+
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    line-height: 25px;
+}
+
+.priva_2 {
+    color: #E6C409;
+    font-family: ubuntu_bold;
+}
+
+.priva_2:hover {
+    color: #009EE2;
+    font-family: ubuntu_bold;
+}
+
+
+
+
+/* FORMULARIOS */
+
+
+.vid_2 {
+    position: absolute;
+    top: 18.5em;
+    height: auto;
+    width: 100%;
+    z-index: -1;
+}
+
+
+fieldset {
+    min-width: 80%;
+    min-height: 180px;
+    margin-top: 6%;
+    margin-left: 10%;
+    margin-right: 15%;
+    padding: 2%;
+    background-color: white;
+    background-image: url('img/logo-mas.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 4px solid #030030;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+
+}
+
+.fiel {
+    min-width: 95%;
+    min-height: 180px;
+    margin-top: 6%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 1%;
+    padding-left: 2px;    
+    background-color: white;
+    background-image: url('img/logo-mas.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 4px solid #030030;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+
+}
+
+.fiel-1 {
+    min-width: 95%;
+    min-height: 180px;
+    margin-top: 6%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 1%;
+    padding-left: 6%;    
+    background-color: white;
+    background-image: url('img/logo-mas.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 4px solid #030030;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+
+}
+
+.fiel-2 {
+    min-width: 80%;
+    min-height: 180px;
+    margin-top: 6%;
+    margin-left: 10%;
+    margin-right: 15%;
+    padding-left: 15%;
+    background-color: white;
+    background-image: url('img/logo-mas.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 4px solid #030030;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+
+}
+.fiel-3 {
+    min-width: 80%;
+    min-height: 180px;
+    margin-top: 6%;
+    margin-left: 10%;
+    margin-right: 15%;
+    padding-left: 25%;
+    background-color: white;
+    background-image: url('img/logo-mas.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 4px solid #030030;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+
+}
+
+
+legend {
+    font-family: "baloo";
+    font-size: 20px;
+    padding: 8px;
+    background-color: #312782;
+    color: #ffec00;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+select {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+input {
+    font-size: 15px;
+    font-family: 'Ubuntu';
+    size: 40px;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+td {
+    font-weight: bold;
+    box-sizing: content-box;
+    padding: 4px;
+    
+}
+
+
+
+/* BOTON */
+
+
+.margin {
+    padding: 4px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: #312782;
+    color: #FFEC00;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    font-family: "ubuntu";
+    cursor: pointer;
+    position: relative;
+    left: 47%;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.margin:hover {
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #FFEC00;
+    color: #312782;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    font-family: ubuntu;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.margin-2 {
+   
+    padding: 4px;
+    border-radius: 5px;
+    background-color: #312782;
+    color: #FFEC00;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    font-family: "ubuntu";
+    cursor: pointer;
+    position: relative;
+    
+    left: 35%;
+    bottom: 0px;
+    margin-top: 90px;
+    
+}
+
+.margin-2:hover {
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #FFEC00;
+    color: #312782;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    font-family: ubuntu;
+    cursor: pointer;
+}
+
+.margin-3 {
+    padding: 4px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: #312782;
+    color: #FFEC00;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    font-family: "ubuntu";
+    cursor: pointer;
+    position: relative;
+    left: 30%;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.margin-3:hover {
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #FFEC00;
+    color: #312782;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    font-family: ubuntu;
+    cursor: pointer;
+}
+
+
+/* AÑADIR USUARIO*/
+
+.add {
+    font-family: "Ubuntu";
+    font-weight: bold;
+    color: #030030;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 20px;
+
+}
+
+.add-1 {
+    background-color:#312782;
+    border: #009EE2 solid 4px;
+    border-radius: 5px;
+    font-family: "Ubuntu";
+    font-weight: bold;
+    font-size: 20px;
+    color: white;    
+    text-align: left;
+    padding-left: 10px;
+    width:fit-content;
+    padding: 10px;
+    margin-left: 22%;
+    margin-right: 22%;
+    
+
+}
+
+.add-2 {
+    background-color:#312782;
+    border: #009EE2 solid 4px;
+    border-radius: 10px;
+    font-family: "Ubuntu";
+    font-weight: bold;
+    font-size: 20px;
+    color: white;    
+    text-align: left;
+    padding-left: 10px;
+    width:fit-content;
+    padding: 10px;
+    margin-left: 38%;
+    margin-right: 35%;
+    
+}
+
+
+
+
+
+
+/* TABLAS */
+
+
+
+td {
+    font-family: ubuntu;
+    box-sizing: content-box;
+}
+
+.tab_listar {
+    
+    position: relative;
+    left: 1%;
+    color: #030030;
+    
+         
+   
+}
+
+
+.borde {
+    border-collapse:separate;    
+    border-radius: 5px;
+    background-color: #009EE2;
+    border: 4px solid #030030;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: center;
+    margin: 0;
+
+}
+
+.borde-1 {
+    border-collapse:separate;    
+    border-radius: 12px;
+    color:white;
+    background-color: #030030;
+    border: 4px solid #009EE2;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: center;
+    
+
+}
+
+.borrar-2{
+    margin-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 3%;
+}
+
+/* REDES SOCIALES */
+
+.vid_3 {
+    position: absolute;
+    top: 290px;
+    height: auto;
+    width: 100%;
+    z-index: -1;
+}
+
+.redes{
+   
+   
+    margin-top: 5%;
+    margin-left:5%;
+    width: 300px;
+    height: 300px;
+   
+    
+
+}
+
+.redes-1{
+    border: #030030 4px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    margin-top: 5%;
+    margin-left:5%;
+    width: 300px;
+    height: 300px;
+    
+
+}
+
+
+/* GALERIA */
+
+.ini-gale{
+    font-family: kg-1;
+    background-color: #009EE2;
+    font-size: 80px;
+    color:#ffec00;    
+    padding-top: 1%;
+    text-align: center;
+    height: 150px;
+    text-shadow: 4px 4px 10px  rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+
+}
+
+.gale{
+    position: relative;
+    float: letf;
+    margin: 5px;
+    height: 250px;
+    width: 250px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    border:solid 4px black;
+}
+
+
+.main-add-gale {
+    width: 100%;
+    height: 2500px;
+    
+}
+.main-gale {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10%;
+    width: 90%;    
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    
+}
+
+.gal{
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);    
+    float: left;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    
+}
+
+
+.gal-img{
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.gal-img:hover{
+    
+    
+    width: 260px;
+    height: 260px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.gal-img-2{
+    width: 700px;
+    height: 700px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.gal-img-3{
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.gale-big{
+    margin: 2%;
+    margin-left: 50%;
+    width: 700px;
+    height: 700px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.main-gale {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    width: 80%;    
+    
+   
+
+}
+
+.main-gale-2 {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    width: 710px;    
+    
+   
+
+}
+
+.footer-gale {
+    position: relative;
+    bottom: 0;
+    background-color: #030030;
+    width: 100%;
+    height: 400px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    
+
+}
+
